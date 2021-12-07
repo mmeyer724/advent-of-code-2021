@@ -1,11 +1,11 @@
-from utils import read_input, run_solution
+from utils import read_input_lines, run_solution
 
 
 def solution(input_name: str) -> int:
     count_increases = 0
     previous_depth = None
 
-    for line in read_input(input_name):
+    for line in read_input_lines(input_name):
         depth = int(line)
 
         if previous_depth is not None and depth > previous_depth:
@@ -17,5 +17,5 @@ def solution(input_name: str) -> int:
 
 
 if __name__ == "__main__":
-    run_solution("day-1-sample.txt", func=solution)
-    run_solution("day-1.txt", func=solution)
+    assert run_solution("sample.txt", func=solution) == 7
+    assert run_solution("input.txt", func=solution) == 1292
