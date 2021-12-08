@@ -12,7 +12,7 @@ def _get_input_path(name: str) -> Path:
 def read_input_lines(name: str) -> List[str]:
     input_path = _get_input_path(name)
     with input_path.open("r") as file:
-        return file.readlines()
+        return list(map(lambda l: l.rstrip(), file.readlines()))
 
 
 def run_solution(input_name: str, func: Callable[[str], Any]) -> Any:
